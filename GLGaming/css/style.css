@@ -68,7 +68,7 @@ hr {
 }
 
 #work,#about, #team, 
-#portfolio, #pricing, #contact, #privacy {
+#portfolio, #pricing, #contact, #privacy, #event {
    padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -267,6 +267,54 @@ navigation section
         }
 }
 
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #00c6d7;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #00c6d7;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+
 
 /* ==========================================================================
 home section
@@ -387,6 +435,105 @@ about section
 .tab-content a:hover, .tab-content a:link {
 	color: #FF0;
 	text-decoration: none;
+}
+
+
+.form {
+  background: #000000;
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: #3B3B3B;
+  color: #ffffff;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+.tab-group li a:hover {
+  background: #00c6d7;
+  color: #ffffff;
+}
+.tab-group .active a {
+  background: #00c6d7;
+  color: #ffffff;
+}
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 16px;
+}
+label .req {
+  margin: 2px;
+  color: #00c6d7;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ffffff;
+}
+
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #00c6d7;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
 }
 
 /* ==========================================================================
@@ -551,8 +698,8 @@ pricing section
 #pricing .plan {
   box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.20);
   padding-top: 40px;
-  padding-bottom: 80px;
-  margin-bottom: 32px;
+  padding-bottom: 20px;
+  margin-bottom: 12px;
 }
 #pricing .plan span {
 	font-size: 16px;
@@ -562,6 +709,7 @@ pricing section
   letter-spacing: 2px;
   padding: 30px;
   margin-bottom: 20px;
+  
 }
 #pricing .medium-icon {
   box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.20);
@@ -571,7 +719,7 @@ pricing section
   height: 120px;
   line-height: 120px;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
 }
 #pricing .plan ul {
   padding: 0px;
@@ -579,7 +727,7 @@ pricing section
 #pricing .plan ul li {
   display: block;
   font-weight: 500;
-  padding: 12px 0px;
+  padding: 2px 0px;
 }
 #pricing .plan .btn {
   border: none;
@@ -587,13 +735,16 @@ pricing section
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
-  padding: 16px 60px;
+  padding: 8px 70px;
   transition: all 0.4s ease-in-out;
-  margin-top: 20px;
+  margin-top: 2px;
   text-transform: uppercase;
 }
 #pricing .plan-one .btn {
   background-color: #00c6d7;
+}
+#pricing .plan-four .btn {
+  background-color: #ff8080;
 }
 #pricing .plan-two .btn {
   background-color: #ffa400;
@@ -610,7 +761,7 @@ pricing section
 contact section
 ========================================================================== */
 #contact {
-  background: #3B3B3B url('../images/dota-wallpaper.jpg') no-repeat center center;
+  background: #3B3B3B url('../images/events-bg-unblurred.jpg') no-repeat center center;
   background-size: cover;
   color: #ffffff;
 }
@@ -656,6 +807,53 @@ contact section
   color: #000000;
 }
 
+========================================================================== */
+#event {
+  background: #3B3B3B url('../images/events-bg.jpg') no-repeat center center;
+  background-size: cover;
+  color: #ffffff;
+}
+#event h2 {
+  padding-bottom: 20px;
+}
+#event h3 {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#event .medium-icon {
+  padding-top: 10px;
+  padding-right: 10px;
+}
+#event .event-info div {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+#event form {
+  padding-top: 60px;
+}
+#event .form-control {
+  border: 2px solid #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.4s ease-in-out;
+}
+#event input {
+  height: 40px;
+}
+#event input[type="submit"] {
+  background: #00c6d7;
+  border: 3px solid #00c6d7;
+  letter-spacing: 1px;
+  margin-top: 18px;
+  height: 50px;
+  color: #ffffff;
+}
+#event input[type="submit"]:hover {
+  color: #000000;
+}
 
 /* ==========================================================================
 footer section
