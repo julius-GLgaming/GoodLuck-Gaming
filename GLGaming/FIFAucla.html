@@ -152,7 +152,12 @@ http://www.tooplate.com/view/2075-digital-team
 <section id="pricing">
 	<div class="container">
 		<div class="row" >
-		
+			<div class="col-md-12 col-sm-12 text-center">
+				<div class="section-title">
+					<h1 class="heading bold" style="text-align:center">Donate & Win</h1>
+					<hr align="center">
+				</div>
+			</div>
 			<div class="col-md-3 col-sm-2">
 				<div class="plan plan-one wow bounceIn" data-wow-delay="0.3s">
 					<div class="plan_title">
@@ -166,13 +171,13 @@ http://www.tooplate.com/view/2075-digital-team
                     	<li>Chance to win upto 200 extra entries<sup>**</sup></li><br/>
 					</nl>
 					<div id="ten-check" style="display:none;"><form action="">
-					<input type='checkbox' name='termsCheck' value='termsCheck' id="termsCheck"/> I have read the <a href="">terms and conditions</a>
-					<input type="checkbox" id="ageCheck" value="ageCheck"/> I am 18 years or older</form>
+					<input type='checkbox' name='tenTermsCheck' value='termsCheck' id="tenTermsCheck"/> I agree to GoodLuck Gaming's <a href="./rules.html" target="_blank">official rules</a> and <a href="./privacypolicy.html" target="_blank">privacy policy</a>
+					<input type="checkbox" id="oneAgeCheck" value="ageCheck"/> I am 18 years or older</form>
 
 					</div>
 					<!--<a href="http://goodgaming.gg/cart/20086654918:1" class="btn btn-warning">Enter To Win</a> -->
 					<a href="javascript:openDisclaimerCheckTen()" id="ten" class="btn btn-warning">Enter To Win</a>
-					<a href="javascript:checkDisclaimerten()" style="display:none;"id="ten-final" class="btn btn-warning">Enter To Win</a>
+					<a href="javascript:checkDisclaimerten()" style="display:none;" id='ten-final' class="btn btn-warning">Enter To Win</a>
 
 				</div>
 			</div>
@@ -188,7 +193,14 @@ http://www.tooplate.com/view/2075-digital-team
 						<li>50 entries to win autographed jersey</li>
                
 					</nl> 
-					<a href="javascript:openDisclaimerfive()" id="five" class="btn btn-warning">Enter To Win</a>
+					<div id="five-check" style="display:none;"><form action="">
+					<input type='checkbox' name='fiveTermsCheck' value='termsCheck' id="fiveTermsCheck"/> I agree to GoodLuck Gaming's <a href="./rules.html" target="_blank">official rules</a> and <a href="./privacypolicy.html" target="_blank">privacy policy</a>
+					<input type="checkbox" id="fiveAgeCheck" value="ageCheck"/> I am 18 years or older</form>
+
+					</div>
+					<!--<a href="http://goodgaming.gg/cart/20086654918:1" class="btn btn-warning">Enter To Win</a> -->
+					<a href="javascript:openDisclaimerCheckFive()" id="five" class="btn btn-warning">Enter To Win</a>
+					<a href="javascript:checkDisclaimerFive()" style="display:none;" id='five-final' class="btn btn-warning">Enter To Win</a>
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-2">
@@ -202,7 +214,15 @@ http://www.tooplate.com/view/2075-digital-team
 						<li>Audience Ticket</li>
 			
 					</nl>
-					<a href="javascript:openDisclaimerone()" id="one"  class="btn btn-warning">Enter To Win</a>
+					<div id="one-check" style="display:none;"><form action="">
+					<input type='checkbox' name='oneTermsCheck' value='termsCheck' id="oneTermsCheck"/> I agree to GoodLuck Gaming's <a href="./rules.html" target="_blank">official rules</a> and <a href="./privacypolicy.html" target="_blank">privacy policy</a>
+					<input type="checkbox" id="oneAgeCheck" value="ageCheck"/> I am 18 years or older</form>
+
+					</div>
+					<!--<a href="http://goodgaming.gg/cart/20086654918:1" class="btn btn-warning">Enter To Win</a> -->
+					<a href="javascript:openDisclaimerCheckOne()" id="one" class="btn btn-warning">Enter To Win</a>
+					<a href="javascript:checkDisclaimerOne()" style="display:none;" id='one-final' class="btn btn-warning">Enter To Win</a>
+					
 				</div>
 			</div>
 			
@@ -299,11 +319,12 @@ No purchase, payment, or contribution necessary to enter or win. Contributing wi
 	}
 
 	function checkDisclaimerten(){
-		var x;
-	    if (confirm("DISCLAIMER!\nDo you agree to the terms and conditions?") == true) {
+	    if (document.getElementById("tenTermsCheck").checked == true && document.getElementById("tenAgeCheck").checked == true ) {
 
 	        window.open('https://goodluck-gaming.myshopify.com/cart/29491099144:1');
-	    } 
+	    } else{
+	    	alert("Please check the checkboxes above to move forward");
+	    }
 		
 	}
 
@@ -312,28 +333,51 @@ No purchase, payment, or contribution necessary to enter or win. Contributing wi
 			document.getElementById("ten-check").style.display="block";
 			document.getElementById("ten").style.display="none";
 			document.getElementById("ten-final").style.display="block";
-			document.getElementById("termsCheck").disabled = false;
-			document.getElementById("ageCheck").disabled = false;
+			document.getElementById("tenTermsCheck").disabled = false;
+			document.getElementById("tenAgeCheck").disabled = false;
 		}
 	}
 
 	
-	function openDisclaimerfive(){
+	function checkDisclaimerFive(){
 		var x;
-	    if (confirm("DISCLAIMER!\nDo you agree to the terms and conditions?") == true) {
+		if (document.getElementById("fiveTermsCheck").checked == true && document.getElementById("fiveAgeCheck").checked == true ) {
 
 	        window.open('https://goodluck-gaming.myshopify.com/cart/29491043144:1');
-	    } 
+	    } else{
+	    	alert("Please check the checkboxes above to move forward");
+	    }
 		
 	}
-	function openDisclaimerone(){
+	function openDisclaimerCheckFive(){
+		if(document.getElementById("five-check").style.display=="none"){
+			document.getElementById("five-check").style.display="block";
+			document.getElementById("five").style.display="none";
+			document.getElementById("five-final").style.display="block";
+			document.getElementById("fiveTermsCheck").disabled = false;
+			document.getElementById("fiveAgeCheck").disabled = false;
+		}
+	}
+
+	function checkDisclaimerOne(){
 		var x;
-	    if (confirm("DISCLAIMER!\nDo you agree to the terms and conditions?") == true) {
+		if (document.getElementById("oneTermsCheck").checked == true && document.getElementById("oneAgeCheck").checked == true ) {
 
 	        window.open('https://goodluck-gaming.myshopify.com/cart/29490584008:1');
-	    } 
-		
+	    } else{
+	    	alert("Please check the checkboxes above to move forward");
+	    }
 	}
+	function openDisclaimerCheckOne(){
+		if(document.getElementById("one-check").style.display=="none"){
+			document.getElementById("one-check").style.display="block";
+			document.getElementById("one").style.display="none";
+			document.getElementById("one-final").style.display="block";
+			document.getElementById("oneTermsCheck").disabled = false;
+			document.getElementById("oneAgeCheck").disabled = false;
+		}
+	}
+
 </script>
 
 </body>
