@@ -757,14 +757,19 @@ pricing section
   background-color: #3B3B3B;
 }
 
-
+input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+    border-radius: 0;
+    height: 30px; width: 30px;
+}
 /* ==========================================================================
 contact section
 ========================================================================== */
 #contact {
-  background: #3B3B3B url('../images/events-bg-unblurred.jpg') no-repeat center center;
+  background: #3B3B3B url('../images/Soccer_Picture.jpg') no-repeat center center;
   background-size: cover;
   color: #ffffff;
+
 }
 #contact h2 {
   padding-bottom: 20px;
