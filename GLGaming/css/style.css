@@ -19,7 +19,7 @@ html, body {
      overflow-x: hidden;
   }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4{
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -757,10 +757,12 @@ pricing section
   background-color: #3B3B3B;
 }
 
+
+
 input[type="checkbox"] {
     -webkit-appearance: checkbox;
     border-radius: 0;
-    height: 30px; width: 30px;
+    height: 20px; width: 20px;
 }
 /* ==========================================================================
 contact section
