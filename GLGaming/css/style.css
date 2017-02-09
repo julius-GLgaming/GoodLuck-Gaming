@@ -758,6 +758,9 @@ pricing section
 #pricing .plan .btn:hover {
   background-color: #3B3B3B;
 }
+#pricing .btn  {
+	background-color: #f6d702;
+}
 
 
 
