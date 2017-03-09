@@ -273,6 +273,8 @@ navigation section
   margin-bottom: 40px;
 }
 
+.fifaEventImages {display:none;}
+
 .top-row:after {
   content: "";
   display: table;
